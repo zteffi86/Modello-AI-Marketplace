@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 
-const models = [
-  { name: "FinBERT", sector: "Finance & Risk", category: "Text Analysis", link: "/model/finbert", description: "Analyzes financial sentiment from news and reports.", price: "$750", apiCost: "$0.05 per request", benchmarks: "Accuracy: 91%", dataset: "Trained on financial news and reports", useCases: ["Investment Research", "Market Sentiment Analysis"], integrationSnippet: "fetch('/api/finbert')" },
-  { name: "Financial-Time-Series-Predictor", sector: "Finance & Risk", category: "Predictive AI", link: "/model/financial-time-series", description: "Forecasts stock and financial trends based on historical data.", price: "$1,200", apiCost: "$0.08 per request", benchmarks: "R-Squared: 0.87", dataset: "Historical stock market data", useCases: ["Portfolio Management", "Risk Forecasting"], integrationSnippet: "fetch('/api/financial-time-series')" },
-];
-
 export default function Home() {
+  const models = [
+    { name: "FinBERT", sector: "Finance & Risk", category: "Text Analysis", link: "/model/finbert", description: "Analyzes financial sentiment from news and reports.", price: "$750", apiCost: "$0.05 per request", benchmarks: "Accuracy: 91%", dataset: "Trained on financial news and reports", useCases: ["Investment Research", "Market Sentiment Analysis"], integrationSnippet: "fetch('/api/finbert')" },
+    { name: "Financial-Time-Series-Predictor", sector: "Finance & Risk", category: "Predictive AI", link: "/model/financial-time-series", description: "Forecasts stock and financial trends based on historical data.", price: "$1,200", apiCost: "$0.08 per request", benchmarks: "R-Squared: 0.87", dataset: "Historical stock market data", useCases: ["Portfolio Management", "Risk Forecasting"], integrationSnippet: "fetch('/api/financial-time-series')" }
+  ];
+
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSector, setSelectedSector] = useState("All");
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -31,10 +31,10 @@ export default function Home() {
         <h2 className="text-3xl font-semibold">Why Choose Modello?</h2>
         <p className="mt-2">Unlike Hugging Face or AWS, we offer <strong>ready-to-use AI solutions</strong> that require no setup.</p>
         <ul className="mt-4 list-disc list-inside">
-          <li><span role="img" aria-label="checkmark">✅</span> Instant AI deployment - No coding required</li>
-          <li><span role="img" aria-label="checkmark">✅</span> Plug-and-play solutions for various industries</li>
-          <li><span role="img" aria-label="checkmark">✅</span> Live model testing before purchase</li>
-          <li><span role="img" aria-label="checkmark">✅</span> AI-powered recommendations for your business needs</li>
+          <li>✅ Instant AI deployment - No coding required</li>
+          <li>✅ Plug-and-play solutions for various industries</li>
+          <li>✅ Live model testing before purchase</li>
+          <li>✅ AI-powered recommendations for your business needs</li>
         </ul>
       </section>
       
