@@ -79,7 +79,7 @@ export default function Home() {
       
       <h3 className="text-2xl font-semibold mt-6">Customer Reviews & Success Stories</h3>
       <div className="border p-4 mt-4">
-        <p>⭐⭐⭐⭐⭐ “Modello made it super easy to integrate AI into our workflow!” - TechCorp</p>
+        <p>⭐⭐⭐⭐⭐ “Modello made it super easy to integrate AI into our workflow!!” - TechCorp</p>
       </div>
     </div>
   );
