@@ -23,7 +23,6 @@ export default function Home() {
   );
 
   return (
- return (
     <div className="container mx-auto max-w-4xl p-6">
       <h1 className="text-5xl font-bold text-center">Modello - AI Without Coding</h1>
       <p className="text-lg mt-2 text-center">Find, test, and integrate AI models instantly—no programming required.</p>
