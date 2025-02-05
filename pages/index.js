@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
+import Navbar from '../components/Navbar';
 
 export default function Home() {
   const models = [
