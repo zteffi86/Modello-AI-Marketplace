@@ -1,6 +1,4 @@
-
 import { useState } from "react";
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import Navbar from '../components/Navbar';
 
 export default function Home() {
@@ -10,74 +8,61 @@ export default function Home() {
   ];
 
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedSector, setSelectedSector] = useState("All");
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [comparisonModels, setComparisonModels] = useState([]);
-  const [usage, setUsage] = useState(1000);
-  const pricePerCall = 0.05;
-  const estimatedCost = (usage * pricePerCall).toFixed(2);
-
-  const filteredModels = models.filter((model) =>
-    (selectedSector === "All" || model.sector === selectedSector) &&
-    (selectedCategory === "All" || model.category === selectedCategory) &&
-    (searchQuery === "" || model.name.toLowerCase().includes(searchQuery.toLowerCase()))
-  );
 
   return (
-     <div>
-      <Navbar /> {/* ✅ Added Navbar at the top */}
-    <div className="container mx-auto max-w-4xl p-6">
-      <h1 className="text-5xl font-bold text-center">Modello - AI Without Coding</h1>
-      <p className="text-lg mt-2 text-center">Find, test, and integrate AI models instantly—no programming required.</p>
-      <button className="bg-blue-600 text-white p-3 rounded mt-4 block mx-auto">Explore AI Models</button>
+    <div>
+      <Navbar /> {/* ✅ Navbar is correctly placed */}
+      <div className="container mx-auto max-w-4xl p-6 mt-16">
+        <h1 className="text-5xl font-bold text-center">Modello - AI Without Coding</h1>
+        <p className="text-lg mt-2 text-center">Find, test, and integrate AI models instantly—no programming required.</p>
+        <button className="bg-blue-600 text-white p-3 rounded mt-4 block mx-auto">Explore AI Models</button>
 
-      <section className="mt-8 text-center">
-        <h2 className="text-3xl font-semibold">Why Choose Modello?</h2>
-        <ul className="list-disc pl-5 mt-4 text-left mx-auto max-w-md">
-          <li className="flex items-center gap-2">
-            ✅ <span>Instant AI deployment - No coding required</span>
-          </li>
-          <li className="flex items-center gap-2">
-            ✅ <span>Plug-and-play solutions for various industries</span>
-          </li>
-          <li className="flex items-center gap-2">
-            ✅ <span>Live model testing before purchase</span>
-          </li>
-          <li className="flex items-center gap-2">
-            ✅ <span>AI-powered recommendations for your business needs</span>
-          </li>
+        <section className="mt-8 text-center">
+          <h2 className="text-3xl font-semibold">Why Choose Modello?</h2>
+          <ul className="list-disc pl-5 mt-4 text-left mx-auto max-w-md">
+            <li>✅ Instant AI deployment - No coding required</li>
+            <li>✅ Plug-and-play solutions for various industries</li>
+            <li>✅ Live model testing before purchase</li>
+            <li>✅ AI-powered recommendations for your business needs</li>
+          </ul>
+        </section>
+
+        <div className="flex gap-4 my-4">
+          <input 
+            type="text" 
+            placeholder="Search AI models..." 
+            className="border p-2 w-full rounded" 
+            value={searchQuery} 
+            onChange={(e) => setSearchQuery(e.target.value)} 
+          />
+        </div>
+
+        <h3 className="text-2xl font-semibold mt-6">How It Works</h3>
+        <ul className="list-decimal pl-5 mt-2 text-left">
+          <li>Browse and search for AI models tailored to your needs.</li>
+          <li>Test models with live data before purchasing.</li>
+          <li>Purchase & instantly generate an API key for integration.</li>
         </ul>
-      </section>
 
-      <div className="flex gap-4 my-4">
-        <input type="text" placeholder="Search AI models..." className="border p-2 w-full rounded" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
-      </div>
+        <h3 className="text-2xl font-semibold mt-6">AI Assistant - Smart Chat for Model Recommendations</h3>
+        <input type="text" placeholder="Describe what you need AI for..." className="border p-2 w-full my-2 rounded" />
+        <button className="bg-green-600 text-white p-3 rounded w-full">Ask AI Assistant</button>
 
-      <h3 className="text-2xl font-semibold mt-6">How It Works</h3>
-      <ul className="list-decimal pl-5 mt-2 text-left">
-        <li>Browse and search for AI models tailored to your needs.</li>
-        <li>Test models with live data before purchasing.</li>
-        <li>Purchase & instantly generate an API key for integration.</li>
-      </ul>
+        <h3 className="text-2xl font-semibold mt-6">Pricing & Subscription Plans</h3>
+        <ul className="list-disc pl-5 mt-2">
+          <li>✔ Free Trial for select models</li>
+          <li>✔ Pay-per-use API calls</li>
+          <li>✔ Subscription bundles for access to multiple models</li>
+          <li>✔ Bulk Pricing Discounts</li>
+        </ul>
 
-      <h3 className="text-2xl font-semibold mt-6">AI Assistant - Smart Chat for Model Recommendations</h3>
-      <input type="text" placeholder="Describe what you need AI for..." className="border p-2 w-full my-2 rounded" />
-      <button className="bg-green-600 text-white p-3 rounded w-full">Ask AI Assistant</button>
-
-      <h3 className="text-2xl font-semibold mt-6">Pricing & Subscription Plans</h3>
-      <ul className="list-disc pl-5 mt-2">
-        <li>✔ Free Trial for select models</li>
-        <li>✔ Pay-per-use API calls</li>
-        <li>✔ Subscription bundles for access to multiple models</li>
-        <li>✔ Bulk Pricing Discounts</li>
-      </ul>
-
-      <h3 className="text-2xl font-semibold mt-6">Customer Reviews & Success Stories</h3>
-      <div className="border p-4 mt-4 rounded-lg shadow-md">
-        <p>⭐⭐⭐⭐⭐ “Modello made it super easy to integrate AI into our workflow!” - TechCorp</p>
+        <h3 className="text-2xl font-semibold mt-6">Customer Reviews & Success Stories</h3>
+        <div className="border p-4 mt-4 rounded-lg shadow-md">
+          <p>⭐⭐⭐⭐⭐ “Modello made it super easy to integrate AI into our workflow!” - TechCorp</p>
+        </div>
       </div>
     </div>
- </div>
-);
+  ); // ✅ Closing return properly
+} // ✅ Closing function properly
 
-}
+export default Home; // ✅ This was missing in your original code
