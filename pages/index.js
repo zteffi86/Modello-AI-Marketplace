@@ -77,6 +77,7 @@ export default function Home() {
         <p>⭐⭐⭐⭐⭐ “Modello made it super easy to integrate AI into our workflow!” - TechCorp</p>
       </div>
     </div>
+ </div>
 );
 
 }
