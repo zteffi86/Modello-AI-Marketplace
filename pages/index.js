@@ -11,7 +11,12 @@ export default function Home() {  // ✅ This is the only export default
 
   return (
     <div>
-      <Navbar />
+      <Navbar /> {/* ✅ Navbar is at the top */}
+
+    {/* ✅ DEBUG MESSAGE TO SEE IF THIS FILE IS LOADED */}
+    <div className="text-red-600 text-center font-bold">
+      Debug: Index.js is rendering!
+    </div>
       <div className="container mx-auto max-w-4xl p-6 mt-16">
         <h1 className="text-5xl font-bold text-center">Modello - AI Without Coding</h1>
         <p className="text-lg mt-2 text-center">Find, test, and integrate AI models instantly—no programming required.</p>
