@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Navbar from '../components/Navbar';
 
-export default function Home() {
+export default function Home() {  // ✅ This is the only export default
   const models = [
     { name: "FinBERT", sector: "Finance & Risk", category: "Text Analysis", link: "/model/finbert", description: "Analyzes financial sentiment from news and reports.", price: "$750", apiCost: "$0.05 per request", benchmarks: "Accuracy: 91%", dataset: "Trained on financial news and reports", useCases: ["Investment Research", "Market Sentiment Analysis"], integrationSnippet: "fetch('/api/finbert')" },
     { name: "Financial-Time-Series-Predictor", sector: "Finance & Risk", category: "Predictive AI", link: "/model/financial-time-series", description: "Forecasts stock and financial trends based on historical data.", price: "$1,200", apiCost: "$0.08 per request", benchmarks: "R-Squared: 0.87", dataset: "Historical stock market data", useCases: ["Portfolio Management", "Risk Forecasting"], integrationSnippet: "fetch('/api/financial-time-series')" }
@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <div>
-      <Navbar /> {/* ✅ Navbar is correctly placed */}
+      <Navbar />
       <div className="container mx-auto max-w-4xl p-6 mt-16">
         <h1 className="text-5xl font-bold text-center">Modello - AI Without Coding</h1>
         <p className="text-lg mt-2 text-center">Find, test, and integrate AI models instantly—no programming required.</p>
@@ -65,4 +65,5 @@ export default function Home() {
   ); // ✅ Closing return properly
 } // ✅ Closing function properly
 
-export default Home; // ✅ This was missing in your original code
+// ❌ Make sure there's only **ONE export default**
+export default Home; // ✅ Correct placement
