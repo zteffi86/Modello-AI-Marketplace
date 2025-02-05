@@ -64,6 +64,3 @@ export default function Home() {  // ✅ This is the only export default
     </div>
   ); // ✅ Closing return properly
 } // ✅ Closing function properly
-
-// ❌ Make sure there's only **ONE export default**
-export default Home; // ✅ Correct placement
